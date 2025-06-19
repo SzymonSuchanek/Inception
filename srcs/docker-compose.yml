@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  nginx:
+    build: ./requirements/nginx
+    container_name: nginx
+    ports:
+      - "443:443"
+    volumes:
+      - ./requirements/nginx/conf:/etc/nginx/conf
+      - ./requirements/nginx/index.html:/usr/share/nginx/html/index.html
+    restart: always
